@@ -2,13 +2,18 @@ int nine_brightness = 0; //intensity metric of 0 - 255
 int ten_brightness = 175;
 
 void setup() {
+  pinMode(8, OUTPUT);
   pinMode(9, OUTPUT); 
   pinMode(10, OUTPUT);
+  pinMode(13, OUTPUT);
 }
 
 void loop() {
+  digitalWrite(13, HIGH);
+  delay(50);
+  digitalWrite(13, LOW);
 
-  //Turn up brightness
+  //Turn up nine_brightness
   for(nine_brightness = 0; nine_brightness <= 175; nine_brightness += 1){
     ten_brightness -= 1;
     analogWrite(9, nine_brightness);
@@ -16,9 +21,12 @@ void loop() {
     delay(20);
     }
 
+  digitalWrite(8, HIGH);
+  delay(50);
   ten_brightness = 0;
-  
-  //Turn down brightness
+  digitalWrite(8, LOW);
+
+  //Turn down nine_brightness
   for(nine_brightness = 175; nine_brightness >= 0; nine_brightness -= 1){
     ten_brightness += 1;
     analogWrite(9, nine_brightness);
