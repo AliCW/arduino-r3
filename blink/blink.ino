@@ -8,8 +8,10 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   digitalWrite(8, HIGH);
+  digitalWrite(9, HIGH);
   delay(200);
 
   digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
   delay(200);
 }
